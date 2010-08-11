@@ -59,19 +59,18 @@ RESGEN=resgen2
 	
 all: $(ASSEMBLY) $(PROGRAMFILES) $(LINUX_PKGCONFIG) 
 
-FILES = \
+FILES =  \
 	Entity.cs \
-	Node.cs \
-	NodeAuth.cs \
-	NodeAuthType.cs \
-	NodeDriver.cs \
-	NodeImage.cs \
-	NodeLocation.cs \
-	NodeOptions.cs \
-	NodeProvider.cs \
-	NodeSize.cs \
+	MCloud.Deploy/CreateUser.cs \
 	MCloud.Deploy/Deployment.cs \
 	MCloud.Deploy/MultiStepDeployment.cs \
+	MCloud.Deploy/PushPgsqlDB.cs \
+	MCloud.Deploy/PutDirectory.cs \
+	MCloud.Deploy/PutFile.cs \
+	MCloud.Deploy/PutFiles.cs \
+	MCloud.Deploy/PutSSHKeys.cs \
+	MCloud.Deploy/RunCommand.cs \
+	MCloud.Deploy/RunScript.cs \
 	MCloud.Deploy/SSHDeployment.cs \
 	MCloud.EC2/EC2Driver.cs \
 	MCloud.EC2/EC2Node.cs \
@@ -86,17 +85,18 @@ FILES = \
 	MCloud.Linode/LinodeRequest.cs \
 	MCloud.Linode/LinodeResponse.cs \
 	MCloud.Linode/PaymentTerm.cs \
-	NodeState.cs \
-	MCloud.Server/ServerNode.cs \
 	MCloud.Server/ServerDriver.cs \
-	MCloud.Deploy/PutSSHKeys.cs \
-	MCloud.Deploy/PutDirectory.cs \
-	MCloud.Deploy/PutFile.cs \
-	MCloud.Deploy/PutFiles.cs \
-	MCloud.Deploy/RunCommand.cs \
-	MCloud.Deploy/RunScript.cs \
-	MCloud.Deploy/CreateUser.cs \
-	MCloud.Deploy/PushPgsqlDB.cs 
+	MCloud.Server/ServerNode.cs \
+	Node.cs \
+	NodeAuth.cs \
+	NodeAuthType.cs \
+	NodeDriver.cs \
+	NodeImage.cs \
+	NodeLocation.cs \
+	NodeOptions.cs \
+	NodeProvider.cs \
+	NodeSize.cs \
+	NodeState.cs 
 
 DATA_FILES = 
 
@@ -107,11 +107,16 @@ EXTRAS = \
 	mcloud.pc.in 
 
 REFERENCES =  \
-	System.Web \
-	System.Core \
-	System \
+	../lib/AWSSDK.dll \
+	../lib/DiffieHellman.dll \
+	../lib/Newtonsoft.Json.Net20.dll \
+	../lib/Org.Mentalis.Security.dll \
+	../lib/Tamir.SharpSSH.dll \
+	ICSharpCode.SharpZipLib \
 	Npgsql \
-	ICSharpCode.SharpZipLib
+	System \
+	System.Core \
+	System.Web
 
 DLL_REFERENCES =  \
 	../lib/AWSSDK.dll \

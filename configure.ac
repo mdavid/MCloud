@@ -53,8 +53,10 @@ dnl package checks, per config
 AC_CONFIG_FILES([
 MCloud/mcloud.pc
 MCloud/Makefile
-samples/samples
-samples/Makefile
+samples/create/samples
+samples/create/Makefile
+MCloud.Console/mcloud.console
+MCloud.Console/Makefile
 Makefile
 
 ])

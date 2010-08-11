@@ -1,0 +1,2 @@
+# Please visit https://www.linode.com/members/profile/index.cfm to obtain your Linode API key listed under the "API Password" section.
+# The API key should replace these two comment lines leaving nothing but the API key on the first line of this file.

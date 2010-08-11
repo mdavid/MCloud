@@ -10,18 +10,16 @@ ASSEMBLY = bin/Debug/samples.exe
 ASSEMBLY_MDB = $(ASSEMBLY).mdb
 COMPILE_TARGET = exe
 PROJECT_REFERENCES =  \
-	../MCloud/bin/Debug/MCloud.dll
+	../../MCloud/bin/Debug/MCloud.dll
 BUILD_DIR = bin/Debug
 
 LINODE_KEY_TXT_SOURCE=LINODE-KEY.txt
-MCLOUD_DLL_SOURCE=../MCloud/bin/Debug/MCloud.dll
-AWSSDK_DLL_SOURCE=../lib/AWSSDK.dll
-DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
-NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
-ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
-TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
-MCLOUD_DLL_MDB_SOURCE=../MCloud/bin/Debug/MCloud.dll.mdb
-MCLOUD_DLL_MDB=$(BUILD_DIR)/MCloud.dll.mdb
+MCLOUD_DLL_SOURCE=../../MCloud/bin/Debug/MCloud.dll
+AWSSDK_DLL_SOURCE=../../lib/AWSSDK.dll
+DIFFIEHELLMAN_DLL_SOURCE=../../lib/DiffieHellman.dll
+NEWTONSOFT_JSON_NET20_DLL_SOURCE=../../lib/Newtonsoft.Json.Net20.dll
+ORG_MENTALIS_SECURITY_DLL_SOURCE=../../lib/Org.Mentalis.Security.dll
+TAMIR_SHARPSSH_DLL_SOURCE=../../lib/Tamir.SharpSSH.dll
 SAMPLES_EXE_MDB_SOURCE=bin/Debug/samples.exe.mdb
 SAMPLES_EXE_MDB=$(BUILD_DIR)/samples.exe.mdb
 
@@ -34,17 +32,16 @@ ASSEMBLY = bin/Release/samples.exe
 ASSEMBLY_MDB = 
 COMPILE_TARGET = exe
 PROJECT_REFERENCES =  \
-	../MCloud/bin/Release/MCloud.dll
+	../../MCloud/bin/Release/MCloud.dll
 BUILD_DIR = bin/Release
 
 LINODE_KEY_TXT_SOURCE=LINODE-KEY.txt
-MCLOUD_DLL_SOURCE=../MCloud/bin/Release/MCloud.dll
-AWSSDK_DLL_SOURCE=../lib/AWSSDK.dll
-DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
-NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
-ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
-TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
-MCLOUD_DLL_MDB=
+MCLOUD_DLL_SOURCE=../../MCloud/bin/Release/MCloud.dll
+AWSSDK_DLL_SOURCE=../../lib/AWSSDK.dll
+DIFFIEHELLMAN_DLL_SOURCE=../../lib/DiffieHellman.dll
+NEWTONSOFT_JSON_NET20_DLL_SOURCE=../../lib/Newtonsoft.Json.Net20.dll
+ORG_MENTALIS_SECURITY_DLL_SOURCE=../../lib/Org.Mentalis.Security.dll
+TAMIR_SHARPSSH_DLL_SOURCE=../../lib/Tamir.SharpSSH.dll
 SAMPLES_EXE_MDB=
 
 endif
@@ -60,7 +57,6 @@ PROGRAMFILES = \
 	$(NEWTONSOFT_JSON_NET20_DLL) \
 	$(ORG_MENTALIS_SECURITY_DLL) \
 	$(TAMIR_SHARPSSH_DLL) \
-	$(MCLOUD_DLL_MDB) \
 	$(SAMPLES_EXE_MDB)  
 
 BINARIES = \
@@ -71,9 +67,9 @@ RESGEN=resgen2
 	
 all: $(ASSEMBLY) $(PROGRAMFILES) $(BINARIES) 
 
-FILES = \
-	CreateLinode.cs \
-	AssemblyInfo.cs 
+FILES =  \
+	AssemblyInfo.cs \
+	CreateLinode.cs 
 
 DATA_FILES = 
 
@@ -84,6 +80,7 @@ EXTRAS = \
 	samples.in 
 
 REFERENCES =  \
+	../../MCloud/bin/Debug/MCloud.dll \
 	System \
 	System.Core \
 	System.Web
@@ -110,7 +107,6 @@ $(eval $(call emit-deploy-target,DIFFIEHELLMAN_DLL))
 $(eval $(call emit-deploy-target,NEWTONSOFT_JSON_NET20_DLL))
 $(eval $(call emit-deploy-target,ORG_MENTALIS_SECURITY_DLL))
 $(eval $(call emit-deploy-target,TAMIR_SHARPSSH_DLL))
-$(eval $(call emit-deploy-target,MCLOUD_DLL_MDB))
 $(eval $(call emit-deploy-wrapper,SAMPLES,samples,x))
 
 

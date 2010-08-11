@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCloud", "MCloud\MCloud.csproj", "{37987133-B5D5-4B8F-9F0F-55C80787E821}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "samples", "samples\samples.csproj", "{AAA7F880-8583-42FF-B1C2-7645D19F0308}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "samples", "samples\create\samples.csproj", "{AAA7F880-8583-42FF-B1C2-7645D19F0308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCloud.Console", "MCloud.Console\MCloud.Console.csproj", "{9A40BB87-39CC-4862-A8E7-E92DA2878368}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +17,16 @@ Global
 		{37987133-B5D5-4B8F-9F0F-55C80787E821}.Debug|x86.Build.0 = Debug|x86
 		{37987133-B5D5-4B8F-9F0F-55C80787E821}.Release|x86.ActiveCfg = Release|x86
 		{37987133-B5D5-4B8F-9F0F-55C80787E821}.Release|x86.Build.0 = Release|x86
+		{9A40BB87-39CC-4862-A8E7-E92DA2878368}.Debug|x86.ActiveCfg = Debug|x86
+		{9A40BB87-39CC-4862-A8E7-E92DA2878368}.Debug|x86.Build.0 = Debug|x86
+		{9A40BB87-39CC-4862-A8E7-E92DA2878368}.Release|x86.ActiveCfg = Release|x86
+		{9A40BB87-39CC-4862-A8E7-E92DA2878368}.Release|x86.Build.0 = Release|x86
 		{AAA7F880-8583-42FF-B1C2-7645D19F0308}.Debug|x86.ActiveCfg = Debug|x86
 		{AAA7F880-8583-42FF-B1C2-7645D19F0308}.Debug|x86.Build.0 = Debug|x86
 		{AAA7F880-8583-42FF-B1C2-7645D19F0308}.Release|x86.ActiveCfg = Release|x86
 		{AAA7F880-8583-42FF-B1C2-7645D19F0308}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MCloud\MCloud.csproj
+		StartupItem = MCloud.Console\MCloud.Console.csproj
 	EndGlobalSection
 EndGlobal

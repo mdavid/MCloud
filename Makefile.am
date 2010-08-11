@@ -3,8 +3,8 @@ EXTRA_DIST =  expansions.m4 lib/AWSSDK.dll lib/DiffieHellman.dll lib/Newtonsoft.
 
 #Warning: This is an automatically generated file, do not edit!
 if ENABLE_DEBUG_X86
- SUBDIRS =  MCloud samples
+ SUBDIRS =  MCloud samples/create MCloud.Console
 endif
 if ENABLE_RELEASE_X86
- SUBDIRS =  MCloud samples
+ SUBDIRS =  MCloud samples/create MCloud.Console
 endif
