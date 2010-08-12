@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 
 using MCloud;
-using MCloud.Linode;
-using MCloud.Deploy;
+using MCloud.Provider.Linode;
+using MCloud.Provider.Model;
+using MCloud.Operation;
 
 
 namespace samples

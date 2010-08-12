@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{37987133-B5D5-4B8F-9F0F-55C80787E821}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -31,49 +31,49 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="Entity.cs" />
-    <Compile Include="Node.cs" />
-    <Compile Include="NodeAuth.cs" />
-    <Compile Include="NodeAuthType.cs" />
-    <Compile Include="NodeDriver.cs" />
-    <Compile Include="NodeImage.cs" />
-    <Compile Include="NodeLocation.cs" />
-    <Compile Include="NodeOptions.cs" />
-    <Compile Include="NodeProvider.cs" />
-    <Compile Include="NodeSize.cs" />
-    <Compile Include="MCloud.Deploy\Deployment.cs" />
-    <Compile Include="MCloud.Deploy\MultiStepDeployment.cs" />
-    <Compile Include="MCloud.Deploy\SSHDeployment.cs" />
-    <Compile Include="MCloud.EC2\EC2Driver.cs" />
-    <Compile Include="MCloud.EC2\EC2Node.cs" />
-    <Compile Include="MCloud.EC2\EC2NodeOptions.cs" />
-    <Compile Include="MCloud.EC2\EC2NodeSizes.cs" />
-    <Compile Include="MCloud.Linode\LinodeAPI.cs" />
-    <Compile Include="MCloud.Linode\LinodeCertificatePolicy.cs" />
-    <Compile Include="MCloud.Linode\LinodeDriver.cs" />
-    <Compile Include="MCloud.Linode\LinodeError.cs" />
-    <Compile Include="MCloud.Linode\LinodeNode.cs" />
-    <Compile Include="MCloud.Linode\LinodeNodeOptions.cs" />
-    <Compile Include="MCloud.Linode\LinodeRequest.cs" />
-    <Compile Include="MCloud.Linode\LinodeResponse.cs" />
-    <Compile Include="MCloud.Linode\PaymentTerm.cs" />
-    <Compile Include="NodeState.cs" />
-    <Compile Include="MCloud.Server\ServerNode.cs" />
-    <Compile Include="MCloud.Server\ServerDriver.cs" />
-    <Compile Include="MCloud.Deploy\PutSSHKeys.cs" />
-    <Compile Include="MCloud.Deploy\PutDirectory.cs" />
-    <Compile Include="MCloud.Deploy\PutFile.cs" />
-    <Compile Include="MCloud.Deploy\PutFiles.cs" />
-    <Compile Include="MCloud.Deploy\RunCommand.cs" />
-    <Compile Include="MCloud.Deploy\RunScript.cs" />
-    <Compile Include="MCloud.Deploy\CreateUser.cs" />
-    <Compile Include="MCloud.Deploy\PushPgsqlDB.cs" />
+    <Compile Include="Provider\Model\Entity.cs" />
+    <Compile Include="Provider\GoGrid\GoGridNodeOptions.cs" />
+    <Compile Include="Provider\GoGrid\GoGridNodeDriver.cs" />
+    <Compile Include="Provider\Rackspace\RackspaceNodeDriver.cs" />
+    <Compile Include="Provider\Rackspace\RackspaceNodeOptions.cs" />
+    <Compile Include="Provider\Model\Node.cs" />
+    <Compile Include="Provider\Model\NodeAuth.cs" />
+    <Compile Include="Provider\Model\NodeAuthType.cs" />
+    <Compile Include="Provider\Model\NodeDriver.cs" />
+    <Compile Include="Provider\Model\NodeImage.cs" />
+    <Compile Include="Provider\Model\NodeLocation.cs" />
+    <Compile Include="Provider\Model\NodeOptions.cs" />
+    <Compile Include="Provider\Model\NodeProvider.cs" />
+    <Compile Include="Provider\Model\NodeSize.cs" />
+    <Compile Include="Operation\Deployment.cs" />
+    <Compile Include="Operation\MultiStepDeployment.cs" />
+    <Compile Include="Operation\SSHDeployment.cs" />
+    <Compile Include="Provider\EC2\EC2Driver.cs" />
+    <Compile Include="Provider\EC2\EC2Node.cs" />
+    <Compile Include="Provider\EC2\EC2NodeOptions.cs" />
+    <Compile Include="Provider\EC2\EC2NodeSizes.cs" />
+    <Compile Include="Provider\Linode\LinodeAPI.cs" />
+    <Compile Include="Provider\Linode\LinodeCertificatePolicy.cs" />
+    <Compile Include="Provider\Linode\LinodeDriver.cs" />
+    <Compile Include="Provider\Linode\LinodeError.cs" />
+    <Compile Include="Provider\Linode\LinodeNode.cs" />
+    <Compile Include="Provider\Linode\LinodeNodeOptions.cs" />
+    <Compile Include="Provider\Linode\LinodeRequest.cs" />
+    <Compile Include="Provider\Linode\LinodeResponse.cs" />
+    <Compile Include="Provider\Linode\PaymentTerm.cs" />
+    <Compile Include="Provider\Model\NodeState.cs" />
+    <Compile Include="Model\ServerNode.cs" />
+    <Compile Include="Model\ServerDriver.cs" />
+    <Compile Include="Operation\PutSSHKeys.cs" />
+    <Compile Include="Operation\PutDirectory.cs" />
+    <Compile Include="Operation\PutFile.cs" />
+    <Compile Include="Operation\PutFiles.cs" />
+    <Compile Include="Operation\RunCommand.cs" />
+    <Compile Include="Operation\RunScript.cs" />
+    <Compile Include="Operation\CreateUser.cs" />
+    <Compile Include="Operation\PushPgsqlDB.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\AWSSDK.dll</HintPath>
-    </Reference>
     <Reference Include="DiffieHellman, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\DiffieHellman.dll</HintPath>
@@ -82,10 +82,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Newtonsoft.Json.Net20.dll</HintPath>
     </Reference>
+    <Reference Include="Npgsql, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Org.Mentalis.Security.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=2010.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
     <Reference Include="Tamir.SharpSSH, Version=1.1.1.13, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Tamir.SharpSSH.dll</HintPath>
@@ -93,15 +103,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Core" />
     <Reference Include="System" />
-    <Reference Include="Npgsql" />
-    <Reference Include="ICSharpCode.SharpZipLib" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MCloud.Server\" />
-    <Folder Include="MCloud.Voxel\" />
-    <Folder Include="MCloud.Rackspace\" />
-    <Folder Include="GoGrid\" />
-    <Folder Include="MCloud.vCloud\" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
@@ -117,5 +121,20 @@
         </MonoDevelop.Autotools.MakefileInfo>
       </Properties>
     </MonoDevelop>
+    <VisualStudio />
   </ProjectExtensions>
+  <ItemGroup>
+    <ProjectReference Include="..\modules\AWSSDKforNET-extended\AWSSDKSrc.csproj">
+      <Project>{40E91E2D-70F3-463D-9E3E-408AE2A70BA8}</Project>
+      <Name>AWSSDKSrc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Provider\RimuHosting\" />
+    <Folder Include="Provider\SliceHost\" />
+    <Folder Include="Provider\SoftLayer\" />
+    <Folder Include="Provider\vCloud\" />
+    <Folder Include="Provider\Voxel\" />
+    <Folder Include="Provider\VPSNet\" />
+  </ItemGroup>
 </Project>

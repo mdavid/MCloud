@@ -1,0 +1,12 @@
+[submodule "modules/AWSSDKforNET-extended"]
+	path = modules/AWSSDKforNET-extended
+	url = git://github.com/mdavid/AWSSDKForNet-extended.git
+[submodule "modules/MefContrib"]
+	path = modules/MefContrib
+	url = git://github.com/MefContrib/MefContrib.git
+[submodule "modules/MefContrib-Tools"]
+	path = modules/MefContrib-Tools
+	url = git://github.com/MefContrib/MefContrib-Tools.git
+[submodule "modules/MicrosoftReactiveFramework-redistributables"]
+	path = modules/MicrosoftReactiveFramework-redistributables
+	url = git://github.com/mdavid/Microsoft-DevLabs-Rx-Redistributable-Files.git
