@@ -15,6 +15,7 @@ BUILD_DIR = bin/Debug
 
 MCLOUD_DLL_SOURCE=../MCloud/bin/Debug/MCloud.dll
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -36,6 +37,7 @@ BUILD_DIR = bin/Debug
 
 MCLOUD_DLL_SOURCE=../MCloud/bin/Debug/MCloud.dll
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -57,6 +59,7 @@ BUILD_DIR = bin/Debug
 
 MCLOUD_DLL_SOURCE=../MCloud/bin/Debug/MCloud.dll
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -78,6 +81,7 @@ BUILD_DIR = bin/Release
 
 MCLOUD_DLL_SOURCE=../MCloud/bin/Release/MCloud.dll
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -98,6 +102,7 @@ BUILD_DIR = bin/Release
 
 MCLOUD_DLL_SOURCE=../MCloud/bin/Release/MCloud.dll
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -118,6 +123,7 @@ BUILD_DIR = bin/Release
 
 MCLOUD_DLL_SOURCE=../MCloud/bin/Release/MCloud.dll
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -132,6 +138,7 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 PROGRAMFILES = \
 	$(MCLOUD_DLL) \
 	$(DIFFIEHELLMAN_DLL) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
 	$(NEWTONSOFT_JSON_NET20_DLL) \
 	$(ORG_MENTALIS_SECURITY_DLL) \
 	$(TAMIR_SHARPSSH_DLL) \
@@ -168,6 +175,7 @@ include $(top_srcdir)/Makefile.include
 
 MCLOUD_DLL = $(BUILD_DIR)/MCloud.dll
 DIFFIEHELLMAN_DLL = $(BUILD_DIR)/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL = $(BUILD_DIR)/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL = $(BUILD_DIR)/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL = $(BUILD_DIR)/Tamir.SharpSSH.dll
@@ -176,6 +184,7 @@ MCLOUD_CONSOLE = $(BUILD_DIR)/mcloud.console
 
 $(eval $(call emit-deploy-target,MCLOUD_DLL))
 $(eval $(call emit-deploy-target,DIFFIEHELLMAN_DLL))
+$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-target,NEWTONSOFT_JSON_NET20_DLL))
 $(eval $(call emit-deploy-target,ORG_MENTALIS_SECURITY_DLL))
 $(eval $(call emit-deploy-target,TAMIR_SHARPSSH_DLL))

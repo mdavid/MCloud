@@ -1,5 +1,5 @@
 
-EXTRA_DIST =  expansions.m4 lib/DiffieHellman.dll lib/Newtonsoft.Json.Net20.dll lib/Org.Mentalis.Security.dll lib/Tamir.SharpSSH.dll lib/AWSSDK.dll
+EXTRA_DIST =  expansions.m4 lib/nunit-console-runner.dll lib/nunit.framework.dll lib/nunit.framework.extensions.dll lib/nunit.mocks.dll lib/nunit.util.dll lib/DiffieHellman.dll lib/ICSharpCode.SharpZipLib.dll lib/Newtonsoft.Json.Net20.dll lib/Org.Mentalis.Security.dll lib/Tamir.SharpSSH.dll lib/AWSSDK.dll
 
 #Warning: This is an automatically generated file, do not edit!
 if ENABLE_DEBUG

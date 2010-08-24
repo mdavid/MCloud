@@ -13,6 +13,7 @@ PROJECT_REFERENCES =
 BUILD_DIR = bin/Debug
 
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -32,6 +33,7 @@ PROJECT_REFERENCES =
 BUILD_DIR = bin/Debug
 
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -51,6 +53,7 @@ PROJECT_REFERENCES =
 BUILD_DIR = bin/Debug
 
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -70,6 +73,7 @@ PROJECT_REFERENCES =
 BUILD_DIR = bin/Release
 
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -88,6 +92,7 @@ PROJECT_REFERENCES =
 BUILD_DIR = bin/Release
 
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -106,6 +111,7 @@ PROJECT_REFERENCES =
 BUILD_DIR = bin/Release
 
 DIFFIEHELLMAN_DLL_SOURCE=../lib/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL_SOURCE=../lib/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL_SOURCE=../lib/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL_SOURCE=../lib/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL_SOURCE=../lib/Tamir.SharpSSH.dll
@@ -119,6 +125,7 @@ SATELLITE_ASSEMBLY_NAME=$(notdir $(basename $(ASSEMBLY))).resources.dll
 
 PROGRAMFILES = \
 	$(DIFFIEHELLMAN_DLL) \
+	$(ICSHARPCODE_SHARPZIPLIB_DLL) \
 	$(NEWTONSOFT_JSON_NET20_DLL) \
 	$(ORG_MENTALIS_SECURITY_DLL) \
 	$(TAMIR_SHARPSSH_DLL) \
@@ -150,7 +157,6 @@ FILES = \
 	Properties/AssemblyInfo.cs \
 	Provider/DreamHost/DreamhostAPIException.cs \
 	Provider/DreamHost/DreamhostConnection.cs \
-	Provider/DreamHost/DreamhostNodeDrive.cs \
 	Provider/DreamHost/DreamhostResponse.cs \
 	Provider/Dummy/DummyConnection.cs \
 	Provider/Dummy/DummyNodeDriver.cs \
@@ -159,13 +165,11 @@ FILES = \
 	Provider/EC2/EC2Connection.cs \
 	Provider/EC2/EC2Driver.cs \
 	Provider/EC2/EC2EUConnection.cs \
-	Provider/EC2/EC2EUNodeDriver.cs \
 	Provider/EC2/EC2Node.cs \
 	Provider/EC2/EC2NodeOptions.cs \
 	Provider/EC2/EC2NodeSizes.cs \
 	Provider/EC2/EC2Response.cs \
 	Provider/EC2/EC2USWestConnection.cs \
-	Provider/EC2/EC2USWestNodeDriver.cs \
 	Provider/EC2/EucConnection.cs \
 	Provider/EC2/EucNodeDriver.cs \
 	Provider/ECP/ECPConnection.cs \
@@ -211,7 +215,6 @@ FILES = \
 	Provider/Model/NodeProvider.cs \
 	Provider/Model/NodeSize.cs \
 	Provider/Model/NodeState.cs \
-	Provider/OpenNebula/OpenNebualNodeDriver.cs \
 	Provider/OpenNebula/OpenNebulaConnection.cs \
 	Provider/OpenNebula/OpenNebulaResponse.cs \
 	Provider/Rackspace/RackspaceConnection.cs \
@@ -244,7 +247,9 @@ FILES = \
 	Provider/Voxel/VoxelResponse.cs \
 	Provider/VPSNet/VPSNetConnection.cs \
 	Provider/VPSNet/VPSNetNodeDriver.cs \
-	Provider/VPSNet/VPSNetResponse.cs 
+	Provider/VPSNet/VPSNetResponse.cs \
+	Provider/EC2/EC2EUNodeDriver.cs \
+	Provider/EC2/EC2USWestNodeDriver.cs 
 
 DATA_FILES = 
 
@@ -257,11 +262,12 @@ REFERENCES =  \
 	System.Web \
 	System.Core \
 	System \
-	ICSharpCode.SharpZipLib \
-	Npgsql
+	Npgsql \
+	ICSharpCode.SharpZipLib
 
 DLL_REFERENCES =  \
 	../lib/DiffieHellman.dll \
+	../lib/ICSharpCode.SharpZipLib.dll \
 	../lib/Newtonsoft.Json.Net20.dll \
 	../lib/Org.Mentalis.Security.dll \
 	../lib/Tamir.SharpSSH.dll \
@@ -272,6 +278,7 @@ CLEANFILES = $(PROGRAMFILES) $(LINUX_PKGCONFIG)
 include $(top_srcdir)/Makefile.include
 
 DIFFIEHELLMAN_DLL = $(BUILD_DIR)/DiffieHellman.dll
+ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NEWTONSOFT_JSON_NET20_DLL = $(BUILD_DIR)/Newtonsoft.Json.Net20.dll
 ORG_MENTALIS_SECURITY_DLL = $(BUILD_DIR)/Org.Mentalis.Security.dll
 TAMIR_SHARPSSH_DLL = $(BUILD_DIR)/Tamir.SharpSSH.dll
@@ -279,6 +286,7 @@ AWSSDK_DLL = $(BUILD_DIR)/AWSSDK.dll
 MCLOUD_PC = $(BUILD_DIR)/mcloud.pc
 
 $(eval $(call emit-deploy-target,DIFFIEHELLMAN_DLL))
+$(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
 $(eval $(call emit-deploy-target,NEWTONSOFT_JSON_NET20_DLL))
 $(eval $(call emit-deploy-target,ORG_MENTALIS_SECURITY_DLL))
 $(eval $(call emit-deploy-target,TAMIR_SHARPSSH_DLL))
