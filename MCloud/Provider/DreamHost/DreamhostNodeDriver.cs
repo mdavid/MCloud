@@ -1,22 +1,20 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using MCloud.Provider.Model;
 
-namespace MCloud.Provider.GoGrid
+namespace MCloud.Provider.DreamHost
 {
-    class GoGridNodeDriver : NodeDriver
+    class DreamHostNodeDriver : NodeDriver
     {
-        public GoGridNodeDriver(string key, string secret)
+        public DreamHostNodeDriver(string key, string secret)
             : base(key, secret)
-		{
-            throw new NotImplementedException();
-		}
+        {
+           
+        }
 
         public override NodeProvider Provider
         {
-            get { return NodeProvider.GoGrid; }
+            get { return NodeProvider.DreamHost; }
         }
 
         public override NodeOptions DefaultOptions
@@ -74,4 +72,5 @@ namespace MCloud.Provider.GoGrid
             throw new NotImplementedException();
         }
     }
+	
 }

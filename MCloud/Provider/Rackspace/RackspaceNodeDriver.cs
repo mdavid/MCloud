@@ -16,7 +16,7 @@ namespace MCloud.Provider.Rackspace
 
         public override NodeProvider Provider
         {
-            get { throw new NotImplementedException(); }
+            get { return NodeProvider.Rackspace; }
         }
 
         public override NodeOptions DefaultOptions

@@ -35,7 +35,7 @@ namespace MCloud.Provider.EC2 {
 			set;
 		}
 
-		public static List<NodeSize> List (EC2Driver driver, string region)
+		public static List<NodeSize> List (NodeDriver driver, string region)
 		{
 			List<NodeSize> res = Sizes [region];
 

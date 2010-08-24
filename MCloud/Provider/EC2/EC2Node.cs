@@ -19,7 +19,7 @@ namespace MCloud.Provider.EC2 {
 		{
 		}
 
-		internal static EC2Node FromRunningInstance (RunningInstance r, EC2Driver driver)
+		internal static EC2Node FromRunningInstance (RunningInstance r, NodeDriver driver)
 		{
 			List<IPAddress> public_ips = new List<IPAddress> ();
 			List<IPAddress> private_ips = new List<IPAddress> ();
