@@ -18,6 +18,11 @@ namespace MCloud {
 		RimuHosting,
 		Voxel,
 		SoftLayer,
+        OpenNebula,
+        DreamHost,
+        ElasticHosts,
+        ECP,
+        IBM_SBC
 	}
 }
 

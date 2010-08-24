@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,6 +10,26 @@
     <RootNamespace>MCloud</RootNamespace>
     <AssemblyName>MCloud</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +40,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -28,51 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Compile Include="Provider\Model\Entity.cs" />
-    <Compile Include="Provider\GoGrid\GoGridNodeOptions.cs" />
-    <Compile Include="Provider\GoGrid\GoGridNodeDriver.cs" />
-    <Compile Include="Provider\Rackspace\RackspaceNodeDriver.cs" />
-    <Compile Include="Provider\Rackspace\RackspaceNodeOptions.cs" />
-    <Compile Include="Provider\Model\Node.cs" />
-    <Compile Include="Provider\Model\NodeAuth.cs" />
-    <Compile Include="Provider\Model\NodeAuthType.cs" />
-    <Compile Include="Provider\Model\NodeDriver.cs" />
-    <Compile Include="Provider\Model\NodeImage.cs" />
-    <Compile Include="Provider\Model\NodeLocation.cs" />
-    <Compile Include="Provider\Model\NodeOptions.cs" />
-    <Compile Include="Provider\Model\NodeProvider.cs" />
-    <Compile Include="Provider\Model\NodeSize.cs" />
-    <Compile Include="Operation\Deployment.cs" />
-    <Compile Include="Operation\MultiStepDeployment.cs" />
-    <Compile Include="Operation\SSHDeployment.cs" />
-    <Compile Include="Provider\EC2\EC2Driver.cs" />
-    <Compile Include="Provider\EC2\EC2Node.cs" />
-    <Compile Include="Provider\EC2\EC2NodeOptions.cs" />
-    <Compile Include="Provider\EC2\EC2NodeSizes.cs" />
-    <Compile Include="Provider\Linode\LinodeAPI.cs" />
-    <Compile Include="Provider\Linode\LinodeCertificatePolicy.cs" />
-    <Compile Include="Provider\Linode\LinodeDriver.cs" />
-    <Compile Include="Provider\Linode\LinodeError.cs" />
-    <Compile Include="Provider\Linode\LinodeNode.cs" />
-    <Compile Include="Provider\Linode\LinodeNodeOptions.cs" />
-    <Compile Include="Provider\Linode\LinodeRequest.cs" />
-    <Compile Include="Provider\Linode\LinodeResponse.cs" />
-    <Compile Include="Provider\Linode\PaymentTerm.cs" />
-    <Compile Include="Provider\Model\NodeState.cs" />
-    <Compile Include="Model\ServerNode.cs" />
-    <Compile Include="Model\ServerDriver.cs" />
-    <Compile Include="Operation\PutSSHKeys.cs" />
-    <Compile Include="Operation\PutDirectory.cs" />
-    <Compile Include="Operation\PutFile.cs" />
-    <Compile Include="Operation\PutFiles.cs" />
-    <Compile Include="Operation\RunCommand.cs" />
-    <Compile Include="Operation\RunScript.cs" />
-    <Compile Include="Operation\CreateUser.cs" />
-    <Compile Include="Operation\PushPgsqlDB.cs" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="DiffieHellman, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
@@ -82,20 +61,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Newtonsoft.Json.Net20.dll</HintPath>
     </Reference>
-    <Reference Include="Npgsql, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Npgsql.dll</HintPath>
-    </Reference>
     <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Org.Mentalis.Security.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.Composition, Version=2010.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\System.ComponentModel.Composition.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="Tamir.SharpSSH, Version=1.1.1.13, Culture=neutral, PublicKeyToken=null">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Tamir.SharpSSH.dll</HintPath>
@@ -104,13 +73,17 @@
     <Reference Include="System.Core" />
     <Reference Include="System" />
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql" />
+    <Reference Include="AWSSDK, Version=1.0.6.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AWSSDK.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
-        <MonoDevelop.Autotools.MakefileInfo IntegrationEnabled="true" RelativeMakefileName="Makefile.am" SyncReferences="true" IsAutotoolsProject="true" RelativeConfigureInPath="..">
+        <MonoDevelop.Autotools.MakefileInfo IntegrationEnabled="true" RelativeMakefileName="Makefile" SyncReferences="true" RelativeConfigureInPath="..">
           <BuildFilesVar Sync="true" Name="FILES" />
           <DeployFilesVar />
           <ResourcesVar Sync="true" Name="RESOURCES" />
@@ -124,17 +97,133 @@
     <VisualStudio />
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\modules\AWSSDKforNET-extended\AWSSDKSrc.csproj">
-      <Project>{40E91E2D-70F3-463D-9E3E-408AE2A70BA8}</Project>
-      <Name>AWSSDKSrc</Name>
-    </ProjectReference>
+    <Compile Include="Model\ServerDriver.cs" />
+    <Compile Include="Model\ServerNode.cs" />
+    <Compile Include="Operation\CreateUser.cs" />
+    <Compile Include="Operation\Deployment.cs" />
+    <Compile Include="Operation\MultiStepDeployment.cs" />
+    <Compile Include="Operation\PushPgsqlDB.cs" />
+    <Compile Include="Operation\PutDirectory.cs" />
+    <Compile Include="Operation\PutFile.cs" />
+    <Compile Include="Operation\PutFiles.cs" />
+    <Compile Include="Operation\PutSSHKeys.cs" />
+    <Compile Include="Operation\RunCommand.cs" />
+    <Compile Include="Operation\RunScript.cs" />
+    <Compile Include="Operation\SSHDeployment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\DreamHost\DreamhostAPIException.cs" />
+    <Compile Include="Provider\DreamHost\DreamhostConnection.cs" />
+    <Compile Include="Provider\DreamHost\DreamhostNodeDrive.cs" />
+    <Compile Include="Provider\DreamHost\DreamhostResponse.cs" />
+    <Compile Include="Provider\Dummy\DummyConnection.cs" />
+    <Compile Include="Provider\Dummy\DummyNodeDriver.cs" />
+    <Compile Include="Provider\EC2\EC2APSEConnection.cs" />
+    <Compile Include="Provider\EC2\EC2APSENodeDriver.cs" />
+    <Compile Include="Provider\EC2\EC2Connection.cs" />
+    <Compile Include="Provider\EC2\EC2Driver.cs" />
+    <Compile Include="Provider\EC2\EC2EUConnection.cs" />
+    <Compile Include="Provider\EC2\EC2EUNodeDriver.cs" />
+    <Compile Include="Provider\EC2\EC2Node.cs" />
+    <Compile Include="Provider\EC2\EC2NodeOptions.cs" />
+    <Compile Include="Provider\EC2\EC2NodeSizes.cs" />
+    <Compile Include="Provider\EC2\EC2Response.cs" />
+    <Compile Include="Provider\EC2\EC2USWestConnection.cs" />
+    <Compile Include="Provider\EC2\EC2USWestNodeDriver.cs" />
+    <Compile Include="Provider\EC2\EucConnection.cs" />
+    <Compile Include="Provider\EC2\EucNodeDriver.cs" />
+    <Compile Include="Provider\ECP\ECPConnection.cs" />
+    <Compile Include="Provider\ECP\ECPNodeDriver.cs" />
+    <Compile Include="Provider\ECP\ECPResponse.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsBaseConnection.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsBaseNodeDriver.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsException.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsNodeSize.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsResponse.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsUK1Connection.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsUK1NodeDriver.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsUK2Connection.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsUK2NodeDriver.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsUS1Connection.cs" />
+    <Compile Include="Provider\ElasticHosts\ElasticHostsUS1NodeDriver.cs" />
+    <Compile Include="Provider\GoGrid\GoGridAPI.cs" />
+    <Compile Include="Provider\GoGrid\GoGridConnection.cs" />
+    <Compile Include="Provider\GoGrid\GoGridNode.cs" />
+    <Compile Include="Provider\GoGrid\GoGridNodeDriver.cs" />
+    <Compile Include="Provider\GoGrid\GoGridNodeOptions.cs" />
+    <Compile Include="Provider\GoGrid\GoGridResponse.cs" />
+    <Compile Include="Provider\IBM_SBC\IBMConnection.cs" />
+    <Compile Include="Provider\IBM_SBC\IBMNodeDriver.cs" />
+    <Compile Include="Provider\IBM_SBC\IBMResponse.cs" />
+    <Compile Include="Provider\Linode\LinodeAPI.cs" />
+    <Compile Include="Provider\Linode\LinodeCertificatePolicy.cs" />
+    <Compile Include="Provider\Linode\LinodeDriver.cs" />
+    <Compile Include="Provider\Linode\LinodeError.cs" />
+    <Compile Include="Provider\Linode\LinodeNode.cs" />
+    <Compile Include="Provider\Linode\LinodeNodeOptions.cs" />
+    <Compile Include="Provider\Linode\LinodeRequest.cs" />
+    <Compile Include="Provider\Linode\LinodeResponse.cs" />
+    <Compile Include="Provider\Linode\PaymentTerm.cs" />
+    <Compile Include="Provider\Model\Entity.cs" />
+    <Compile Include="Provider\Model\Node.cs" />
+    <Compile Include="Provider\Model\NodeAuth.cs" />
+    <Compile Include="Provider\Model\NodeAuthType.cs" />
+    <Compile Include="Provider\Model\NodeDriver.cs" />
+    <Compile Include="Provider\Model\NodeImage.cs" />
+    <Compile Include="Provider\Model\NodeLocation.cs" />
+    <Compile Include="Provider\Model\NodeOptions.cs" />
+    <Compile Include="Provider\Model\NodeProvider.cs" />
+    <Compile Include="Provider\Model\NodeSize.cs" />
+    <Compile Include="Provider\Model\NodeState.cs" />
+    <Compile Include="Provider\OpenNebula\OpenNebualNodeDriver.cs" />
+    <Compile Include="Provider\OpenNebula\OpenNebulaConnection.cs" />
+    <Compile Include="Provider\OpenNebula\OpenNebulaResponse.cs" />
+    <Compile Include="Provider\Rackspace\RackspaceConnection.cs" />
+    <Compile Include="Provider\Rackspace\RackspaceNodeDriver.cs" />
+    <Compile Include="Provider\Rackspace\RackspaceNodeOptions.cs" />
+    <Compile Include="Provider\Rackspace\RackspaceResponse.cs" />
+    <Compile Include="Provider\RimuHosting\RimuHostingConnection.cs" />
+    <Compile Include="Provider\RimuHosting\RimuHostingException.cs" />
+    <Compile Include="Provider\RimuHosting\RimuHostingNodeDriver.cs" />
+    <Compile Include="Provider\RimuHosting\RimuHostingResponse.cs" />
+    <Compile Include="Provider\SliceHost\SlicehostConnection.cs" />
+    <Compile Include="Provider\SliceHost\SlicehostNodeDriver.cs" />
+    <Compile Include="Provider\SliceHost\SlicehostResponse.cs" />
+    <Compile Include="Provider\SoftLayer\SoftLayerConnection.cs" />
+    <Compile Include="Provider\SoftLayer\SoftLayerException.cs" />
+    <Compile Include="Provider\SoftLayer\SoftLayerNodeDriver.cs" />
+    <Compile Include="Provider\SoftLayer\SoftLayerProxy.cs" />
+    <Compile Include="Provider\SoftLayer\SoftLayerSafeTransport.cs" />
+    <Compile Include="Provider\SoftLayer\SoftLayerTransport.cs" />
+    <Compile Include="Provider\vCloud\HostingComConnection.cs" />
+    <Compile Include="Provider\vCloud\HostingComDriver.cs" />
+    <Compile Include="Provider\vCloud\InstantiateVAppXML.cs" />
+    <Compile Include="Provider\vCloud\TerremarkConnection.cs" />
+    <Compile Include="Provider\vCloud\TerremarkDriver.cs" />
+    <Compile Include="Provider\vCloud\VCloudConnection.cs" />
+    <Compile Include="Provider\vCloud\VCloudNodeDriver.cs" />
+    <Compile Include="Provider\vCloud\VCloudResponse.cs" />
+    <Compile Include="Provider\Voxel\VoxelConnection.cs" />
+    <Compile Include="Provider\Voxel\VoxelNodeDriver.cs" />
+    <Compile Include="Provider\Voxel\VoxelResponse.cs" />
+    <Compile Include="Provider\VPSNet\VPSNetConnection.cs" />
+    <Compile Include="Provider\VPSNet\VPSNetNodeDriver.cs" />
+    <Compile Include="Provider\VPSNet\VPSNetResponse.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Provider\RimuHosting\" />
-    <Folder Include="Provider\SliceHost\" />
-    <Folder Include="Provider\SoftLayer\" />
-    <Folder Include="Provider\vCloud\" />
-    <Folder Include="Provider\Voxel\" />
-    <Folder Include="Provider\VPSNet\" />
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
 </Project>

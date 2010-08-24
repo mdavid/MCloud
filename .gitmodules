@@ -10,3 +10,12 @@
 [submodule "modules/MicrosoftReactiveFramework-redistributables"]
 	path = modules/MicrosoftReactiveFramework-redistributables
 	url = git://github.com/mdavid/Microsoft-DevLabs-Rx-Redistributable-Files.git
+[submodule "modules/gogridapisdk"]
+	path = modules/gogridapisdk
+	url = git://github.com/mdavid/gogridapisdk.git
+[submodule "modules/rackspace-csharp-cloudfiles"]
+	path = modules/rackspace-csharp-cloudfiles
+	url = git://github.com/rackspace/csharp-cloudfiles.git
+[submodule "modules/libcloud"]
+	path = modules/libcloud
+	url = git://github.com/apache/libcloud.git

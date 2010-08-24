@@ -23,12 +23,44 @@ if test "x$GMCS" = "xno"; then
 fi
 
 
+AC_ARG_ENABLE(debug,
+	AC_HELP_STRING([--enable-debug],
+		[Use 'DEBUG' Configuration [default=YES]]),
+		enable_debug=yes, enable_debug=no)
+AM_CONDITIONAL(ENABLE_DEBUG, test x$enable_debug = xyes)
+if test "x$enable_debug" = "xyes" ; then
+	CONFIG_REQUESTED="yes"
+fi
+AC_ARG_ENABLE(debug_mixed_platforms,
+	AC_HELP_STRING([--enable-debug_mixed_platforms],
+		[Use 'DEBUG_MIXED_PLATFORMS' Configuration [default=NO]]),
+		enable_debug_mixed_platforms=yes, enable_debug_mixed_platforms=no)
+AM_CONDITIONAL(ENABLE_DEBUG_MIXED_PLATFORMS, test x$enable_debug_mixed_platforms = xyes)
+if test "x$enable_debug_mixed_platforms" = "xyes" ; then
+	CONFIG_REQUESTED="yes"
+fi
 AC_ARG_ENABLE(debug_x86,
 	AC_HELP_STRING([--enable-debug_x86],
-		[Use 'DEBUG_X86' Configuration [default=YES]]),
+		[Use 'DEBUG_X86' Configuration [default=NO]]),
 		enable_debug_x86=yes, enable_debug_x86=no)
 AM_CONDITIONAL(ENABLE_DEBUG_X86, test x$enable_debug_x86 = xyes)
 if test "x$enable_debug_x86" = "xyes" ; then
+	CONFIG_REQUESTED="yes"
+fi
+AC_ARG_ENABLE(release,
+	AC_HELP_STRING([--enable-release],
+		[Use 'RELEASE' Configuration [default=NO]]),
+		enable_release=yes, enable_release=no)
+AM_CONDITIONAL(ENABLE_RELEASE, test x$enable_release = xyes)
+if test "x$enable_release" = "xyes" ; then
+	CONFIG_REQUESTED="yes"
+fi
+AC_ARG_ENABLE(release_mixed_platforms,
+	AC_HELP_STRING([--enable-release_mixed_platforms],
+		[Use 'RELEASE_MIXED_PLATFORMS' Configuration [default=NO]]),
+		enable_release_mixed_platforms=yes, enable_release_mixed_platforms=no)
+AM_CONDITIONAL(ENABLE_RELEASE_MIXED_PLATFORMS, test x$enable_release_mixed_platforms = xyes)
+if test "x$enable_release_mixed_platforms" = "xyes" ; then
 	CONFIG_REQUESTED="yes"
 fi
 AC_ARG_ENABLE(release_x86,
@@ -40,17 +72,27 @@ if test "x$enable_release_x86" = "xyes" ; then
 	CONFIG_REQUESTED="yes"
 fi
 if test -z "$CONFIG_REQUESTED" ; then
-	AM_CONDITIONAL(ENABLE_DEBUG_X86, true)
-	enable_debug_x86=yes
+	AM_CONDITIONAL(ENABLE_DEBUG, true)
+	enable_debug=yes
 fi
 
 
 dnl package checks, common for all configs
+PKG_CHECK_MODULES([MONO_NUNIT], [mono-nunit])
 
 dnl package checks, per config
 
 
 AC_CONFIG_FILES([
+modules/AWSSDKforNET-extended/awssdksrc.pc
+modules/AWSSDKforNET-extended/Makefile
+modules/gogridapisdk/Trunk/GoGrid/GoGrid/gogrid.pc
+modules/gogridapisdk/Trunk/GoGrid/GoGrid/Makefile
+modules/gogridapisdk/Trunk/Prototypes/com.gogrid.api/com.gogrid.api.pc
+modules/gogridapisdk/Trunk/Prototypes/com.gogrid.api/Makefile
+modules/Makefile
+MCloud.Test/mcloud.test.pc
+MCloud.Test/Makefile
 MCloud/mcloud.pc
 MCloud/Makefile
 samples/create/samples

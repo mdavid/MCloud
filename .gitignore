@@ -13,6 +13,7 @@ configure
 install-sh
 missing
 *.pc
+*.user
 MCloud.Console/mcloud.console
 samples/create/samples
 
